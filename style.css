@@ -1581,3 +1581,24 @@ ul, ol { list-style: none; }
 }
 
 .toast-soon-close:hover { color: #fff; }
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    z-index: 1200;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #000; /* important */
+    margin: 3px 0;
+  }
+}
+z-index: 1200;
+position: relative;
