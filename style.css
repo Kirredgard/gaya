@@ -1270,32 +1270,71 @@ ul, ol { list-style: none; }
 }
 
 /* ================================================
-   RESPONSIVE
+   RESPONSIVE PRO — MOBILE & TABLETTE
    ================================================ */
+
+/* TABLETTE */
 @media (max-width: 1024px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
   .site-main .container {
     grid-template-columns: 1fr 300px;
     gap: 24px;
   }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
 }
 
+/* MOBILE */
 @media (max-width: 900px) {
+
   :root {
     --header-height: 60px;
   }
 
+  body {
+    padding-top: calc(var(--total-top) - 8px);
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* LAYOUT */
   .site-main .container {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .sidebar {
     position: static;
+    gap: 16px;
   }
 
+  /* HEADER */
+  .header-inner {
+    gap: 12px;
+  }
+
+  .logo-name {
+    font-size: 18px;
+  }
+
+  .logo-tagline {
+    display: none;
+  }
+
+  .btn-radio {
+    display: none;
+  }
+
+  .btn-live {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  /* MENU MOBILE */
   .main-nav {
     display: none;
     position: absolute;
@@ -1303,50 +1342,162 @@ ul, ol { list-style: none; }
     left: 0;
     right: 0;
     flex-direction: column;
-    align-items: flex-start;
-    background: var(--color-white);
+    background: #fff;
     border-top: 1px solid var(--color-border);
-    padding: 12px;
+    padding: 10px;
     box-shadow: var(--shadow-md);
-    gap: 2px;
     z-index: 500;
   }
 
-  .main-nav.open { display: flex; }
+  .main-nav.open {
+    display: flex;
+  }
 
-  .main-nav .nav-link { width: 100%; padding: 10px 12px; }
+  .main-nav .nav-link {
+    width: 100%;
+    padding: 12px;
+  }
 
-  .nav-dropdown { width: 100%; }
+  .nav-dropdown {
+    width: 100%;
+  }
 
   .nav-dropdown .dropdown-menu {
     position: static;
     display: none;
-    box-shadow: none;
-    border: none;
     background: var(--color-bg);
-    padding: 6px 0 6px 12px;
-    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    padding-left: 10px;
   }
 
-  .nav-dropdown.open .dropdown-menu { display: block; }
+  .nav-dropdown.open .dropdown-menu {
+    display: block;
+  }
 
-  .hamburger { display: flex; }
+  .hamburger {
+    display: flex;
+  }
 
-  .btn-radio { display: none; }
+  /* SLIDER */
+  .hero-slider {
+    height: 280px;
+    border-radius: 8px;
+  }
 
-  .articles-grid { grid-template-columns: 1fr; }
+  .slide-content {
+    padding: 18px;
+  }
+
+  .slide-title {
+    font-size: 18px;
+  }
+
+  .slide-excerpt {
+    display: none;
+  }
+
+  .slider-prev,
+  .slider-next {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  /* ARTICLES */
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-card {
+    border-radius: 10px;
+  }
+
+  .article-card-body {
+    padding: 12px;
+  }
+
+  .article-title {
+    font-size: 14px;
+  }
+
+  .article-excerpt {
+    font-size: 12px;
+  }
+
+  /* LIST */
+  .article-list-item {
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .article-list-thumb {
+    width: 70px;
+    height: 52px;
+  }
+
+  .article-list-title {
+    font-size: 13px;
+  }
+
+  /* WIDGETS */
+  .sidebar-widget {
+    border-radius: 10px;
+  }
+
+  /* BUTTONS */
+  .btn-don,
+  .newsletter-form button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-top {
+    padding: 40px 0;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
 }
 
+/* PETIT MOBILE */
 @media (max-width: 600px) {
-  .hero-slider { height: 300px; }
-  .slide-title { font-size: 19px; }
-  .slide-excerpt { display: none; }
-  .slide-content { padding: 20px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-  .footer-bottom-inner { flex-direction: column; gap: 6px; text-align: center; }
-  .logo-tagline { display: none; }
-}
 
+  html {
+    font-size: 15px;
+  }
+
+  .hero-slider {
+    height: 250px;
+  }
+
+  .slide-title {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 0 14px;
+  }
+
+  /* TOAST MOBILE */
+  .toast-soon {
+    left: 50% !important;
+    transform: translateX(-50%) scale(1) !important;
+    bottom: 20px;
+    top: auto !important;
+    width: calc(100% - 24px);
+    max-width: 320px;
+  }
+}
 /* ================================================
    ANIMATIONS D'ENTRÉE
    ================================================ */
