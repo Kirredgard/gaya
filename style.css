@@ -354,7 +354,7 @@ ul, ol { list-style: none; }
 
 .hamburger span {
   height: 2px;
-  background: var(--color-text);
+background: #000;;
   border-radius: 2px;
   transition: all 0.3s;
 }
