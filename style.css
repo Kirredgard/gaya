@@ -343,20 +343,90 @@ ul, ol { list-style: none; }
   50% { opacity: 0.3; }
 }
 
-/* HAMBURGER */
+/* ================================================
+   HAMBURGER PRO (VISIBLE + ANIMATION)
+   ================================================ */
+
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
-  width: 32px;
-  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  gap: 4px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  position: relative;
+  z-index: 1200;
 }
 
+/* Hover effet */
+.hamburger:hover {
+  background: var(--color-bg);
+}
+
+/* Les 3 traits */
 .hamburger span {
+  display: block;
+  width: 20px;
   height: 2px;
-background: #000;;
+  background: var(--color-text); /* ✔️ corrigé */
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation en croix */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+}
+.main-nav {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .main-nav {
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .main-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+.main-nav {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .main-nav {
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .main-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 /* SEARCH BAR */
