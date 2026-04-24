@@ -1596,7 +1596,7 @@ ul, ol { list-style: none; }
     display: block;
     width: 20px;
     height: 2px;
-    background: #000; /* important */
+    background: #9e0c24; /* important */
     margin: 3px 0;
   }
 }
